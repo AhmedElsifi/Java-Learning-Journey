@@ -11,22 +11,9 @@ It covers the essential building blocks that will form the foundation for OOP an
 
 ---
 
-## 📑 Contents
-
-1. Introduction to Java
-2. Variables & Data Types
-3. Input and Output
-4. Conditions (if/else, switch)
-5. Loops (for, while, do-while)
-6. Practice Exercises
-
----
-
 ✍️ **Prepared by:** Ahmed Elsifi
 
 <div style="page-break-after: always;"></div>
-
-Here's a detailed markdown summary of Chapter 1: **Introduction to Computers, Programs, and Java**:
 
 ## 1.1 Introduction
 
@@ -54,7 +41,7 @@ A computer is an electronic device that processes data. It consists of:
 
 - **Bit**: Binary digit (0 or 1).
 - **Byte**: 8 bits.
-- Units: KB, MB, GB, TB.
+- **Units:** KB, MB, GB, TB.
 - **Memory Address**: Each byte in memory has a unique address.
 - **Bus**: Connects components; data travels via the bus.
 
@@ -66,6 +53,7 @@ A computer is an electronic device that processes data. It consists of:
 
 - Binary code understood by the CPU.
 - Difficult for humans to read/write.
+- written in zeros and ones
 
 ### Assembly Language:
 
@@ -129,6 +117,8 @@ public class Welcome {
 - **Comments**: Use `//` for single-line or `/* */` for multi-line.
 - **Case Sensitivity**: Java is case-sensitive.
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 ## 1.8 Creating, Compiling, and Executing a Java Program
@@ -137,7 +127,7 @@ public class Welcome {
 2. Compile with `javac Welcome.java` → generates `Welcome.class` (bytecode).
 3. Run with `java Welcome`.
 
-- **JVM (Java Virtual Machine)**: Interprets bytecode and runs the program.
+- **JVM (Java Virtual Machine)**: Interprets bytecode and runs the program no matter what os you are using , as long as you have the JVM installed it will run your bytecode.
 
 ---
 
@@ -173,6 +163,8 @@ public class Welcome {
   4. Compile and run.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ## Key Terms to Remember:
 
@@ -264,4 +256,11 @@ System.out.print("Java");
 ```
 Hello World!
 Java
+```
+
+### Note :
+
+```java
+System.out.println("Welcome to Java!"); == System.out.print("Welcome to Java!\n");
+// Gives the same result
 ```
