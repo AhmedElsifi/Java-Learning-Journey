@@ -8,242 +8,260 @@
 
 <div style="page-break-after: always;"></div>
 
-## 2.1 Introduction
+## 2.1 Introduction to Elementary Programming
 
-- This chapter focuses on writing programs to perform computations using variables, operators, and input/output.
-
----
+- Learn to write programs that perform computations and process input
+- Understand variables, data types, operators, and expressions
+- Apply problem-solving techniques to programming tasks
 
 ## 2.2 Writing a Simple Program
 
-- Programs are designed using algorithms.
-- Example: Compute area of a circle:
-  ```java
-  public class ComputeArea {
-      public static void main(String[] args) {
-          double radius = 20;
-          double area = radius * radius * 3.14159;
-          System.out.println("The area is " + area);
-      }
-  }
-  ```
-- Variables (e.g., `radius`, `area`) store data in memory.
-- Use descriptive names for variables.
+```java
+public class ComputeArea {
+    public static void main(String[] args) {
+        double radius = 20;
+        double area = radius * radius * 3.14159;
+        System.out.println("The area is " + area);
+    }
+}
+```
 
----
+- Programs follow algorithms (step-by-step problem-solving procedures)
+- Variables store data in memory locations
+- Use descriptive names for readability
 
-## 2.3 Reading Input from the Console
+## 2.3 Reading Input with Scanner Class
 
-- Use the `Scanner` class to read input:
-  ```java
-  import java.util.Scanner;
-  Scanner input = new Scanner(System.in);
-  double radius = input.nextDouble();
-  ```
-- Prompt the user before reading input.
-- Multiple inputs can be read in one line or separately.
+```java
+import java.util.Scanner;  // Import statement
 
----
+public class InputExample {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-## 2.4 Identifiers
+        System.out.print("Enter a value: ");  // Prompt user
+        double value = input.nextDouble();    // Read input
 
-- Rules for identifiers:
-  - Can contain letters, digits, `_`, `$`
-  - Cannot start with a digit
-  - Cannot be a keyword
-  - Case-sensitive
-- Use meaningful names (e.g., `numberOfStudents` instead of `numStuds`).
-
----
+        // Other input methods:
+        // input.nextByte(), input.nextShort(), input.nextInt()
+        // input.nextLong(), input.nextFloat(), input.nextBoolean()
+    }
+}
+```
 
 <div style="page-break-after: always;"></div>
 
-## 2.5 Variables
+## 2.4 Output Methods
 
-- Declare variables: `dataType variableName;`
-- Initialize: `int count = 1;`
-- Variables must be declared and initialized before use.
-- Scope: Part of the program where a variable can be accessed.
+```java
+System.out.println("Hello World");    // Prints with newline
+System.out.print("Hello ");           // Prints without newline
+System.out.print("World");
 
----
+// Formatted output
+String name = "John";
+int age = 25;
+System.out.format("Name: %s, Age: %d%n", name, age);
+// %s - string, %d - integer, %f - float, %n - newline
+```
 
-## 2.6 Assignment Statements
+## 2.5 Variables and Constants
 
-- Syntax: `variable = expression;`
-- Example: `x = x + 1;`
-- Chained assignment: `i = j = k = 1;`
-- The right-hand side must be compatible with the left-hand side type.
+```java
+// Variable declaration
+int count;
+double radius;
 
----
+// Variable initialization
+count = 1;
+radius = 5.5;
 
-## 2.7 Named Constants
+// Declaration and initialization in one step
+int number = 10;
 
-- Use `final` keyword: `final double PI = 3.14159;`
-- Benefits:
-  - Avoid repeating values
-  - Easy to change
-  - Improve readability
+// Constants (use final keyword)
+final double PI = 3.14159;
+final int MAX_SIZE = 100;
+```
 
----
+- `final` creates constants (similar to `const` in other languages)
+- Constants cannot be changed after initialization
 
-## 2.8 Naming Conventions
+## 2.6 Naming Conventions
 
-- Variables/methods: `camelCase`
-- Classes: `PascalCase`
-- Constants: `UPPER_CASE_WITH_UNDERSCORES`
-
----
+- **camelCase**: variables and methods (`myVariable`, `calculateArea`)
+- **PascalCase**: class names (`ComputeArea`, `Scanner`)
+- **UPPER_CASE**: constants (`MAX_VALUE`, `PI`)
+- Identifiers can contain letters, digits, \_, $
+- Cannot start with digit or be a reserved keyword
 
 <div style="page-break-after: always;"></div>
 
-## 2.9 Numeric Data Types and Operations
+## 2.7 Numeric Data Types
 
-### Data Types:
+| Type     | Size   | Range                         | Example                  |
+| -------- | ------ | ----------------------------- | ------------------------ |
+| `byte`   | 8-bit  | -128 to 127                   | `byte b = 100;`          |
+| `short`  | 16-bit | -32,768 to 32,767             | `short s = 500;`         |
+| `int`    | 32-bit | ~ -2.1 billion to 2.1 billion | `int i = 100000;`        |
+| `long`   | 64-bit | Very large numbers            | `long l = 10000000000L;` |
+| `float`  | 32-bit | 6-9 significant digits        | `float f = 3.14f;`       |
+| `double` | 64-bit | 15-17 significant digits      | `double d = 3.14159;`    |
 
-| Type     | Size   | Range                    |
-| -------- | ------ | ------------------------ |
-| `byte`   | 8-bit  | -128 to 127              |
-| `short`  | 16-bit | -32768 to 32767          |
-| `int`    | 32-bit | ~ -2.1e9 to 2.1e9        |
-| `long`   | 64-bit | ~ -9.2e18 to 9.2e18      |
-| `float`  | 32-bit | 6-9 significant digits   |
-| `double` | 64-bit | 15-17 significant digits |
+## 2.8 Numeric Operations
 
-### Operators:
+```java
+// Arithmetic operators
+int sum = 5 + 3;      // Addition
+int difference = 5 - 3; // Subtraction
+int product = 5 * 3;    // Multiplication
+int quotient = 5 / 2;   // Division → 2 (integer division)
+double result = 5.0 / 2; // → 2.5 (floating-point division)
+int remainder = 5 % 2;   // Modulus → 1
+// Important: Integer vs floating-point division
+System.out.println(5 / 2);     // Output: 2
+System.out.println(5.0 / 2);   // Output: 2.5
+System.out.println(5f / 2);    // Output: 2.5
+```
 
-- `+`, `-`, `*`, `/`, `%`
-- Integer division truncates: `5 / 2 = 2`
-- Use `Math.pow(a, b)` for exponentiation.
+## 2.9 Math Class Methods
 
-### Reading Numbers:
-
-- `nextByte()`, `nextShort()`, `nextInt()`, `nextLong()`, `nextFloat()`, `nextDouble()`
-
----
+```java
+// Common Math methods
+Math.pow(2, 3);       // 8.0 - Exponentiation
+Math.sqrt(25);        // 5.0 - Square root
+Math.abs(-5);         // 5 - Absolute value
+Math.max(10, 20);     // 20 - Maximum value
+Math.min(10, 20);     // 10 - Minimum value
+Math.round(3.6);      // 4 - Round to nearest integer
+Math.ceil(3.2);       // 4.0 - Round up
+Math.floor(3.8);      // 3.0 - Round down
+Math.random();        // Random number between 0.0 and 1.0
+// Trigonometric functions
+Math.sin(Math.PI/2);  // 1.0 - Sine
+Math.cos(0);          // 1.0 - Cosine
+Math.tan(Math.PI/4);  // ~1.0 - Tangent
+// Constants
+Math.PI;              // 3.141592653589793
+Math.E;               // 2.718281828459045
+```
 
 ## 2.10 Numeric Literals
 
-- Integer literals: `int` by default. Use `L` for `long`: `2147483648L`
-- Floating-point: `double` by default. Use `f` for `float`: `100.2f`
-- Scientific notation: `1.23456e+2`
-- Underscores for readability: `232_455_199`
+```java
+// Integer literals
+int decimal = 100;        // Base 10
+int octal = 0144;         // Base 8 (prefix with 0)
+int hexadecimal = 0x64;   // Base 16 (prefix with 0x)
+int binary = 0b1100100;   // Base 2 (prefix with 0b)
+long bigNumber = 10000000000L; // Long literal (suffix with L)
 
----
+// Floating-point literals
+double normal = 3.14159;
+double scientific = 3.14159e0; // 3.14159
+double largeNumber = 1.234e5;  // 123400.0
 
-## 2.11 JShell
+// Using underscores for readability
+int million = 1_000_000;
+double pi = 3.141_592_653;
+```
 
-- REPL tool for quick Java code testing.
-- Launch: `jshell`
-- Commands: `/vars`, `/edit`, `/exit`
+## 2.11 Type Casting
 
----
+```java
+// Widening (automatic)
+int myInt = 10;
+double myDouble = myInt;   // Automatic casting: int to double
 
-<div style="page-break-after: always;"></div>
+// Narrowing (manual)
+double myDouble = 9.78;
+int myInt = (int) myDouble; // Manual casting: double to int → 9
 
-## 2.12 Evaluating Expressions
+// Casting in expressions
+double result = (double) 5 / 2; // → 2.5
+```
 
-- Operator precedence:
-  1. Parentheses
-  2. `*`, `/`, `%`
-  3. `+`, `-`
-- Example:  
-  `(3 + 4 * 4 + 5 * (4 + 3) - 1) = 53`
+## 2.12 Augmented Assignment Operators
 
----
-
-## 2.13 Case Study: Displaying Current Time
-
-- Use `System.currentTimeMillis()` to get milliseconds since Unix epoch (Jan 1, 1970).
-- Convert to seconds, minutes, hours using `/` and `%`.
-
----
-
-## 2.14 Augmented Assignment Operators
-
-- `+=`, `-=`, `*=`, `/=`, `%=`
-- Example: `x += 2;` is equivalent to `x = x + 2;`
-
----
-
-## 2.15 Increment/Decrement Operators
-
-- `++i` (preincrement), `i++` (postincrement)
-- `--i` (predecrement), `i--` (postdecrement)
-- Example:
-  ```java
-  int i = 10;
-  int newNum = 10 * i++; // newNum = 100, i = 11
-  ```
-
----
-
-## 2.16 Numeric Type Conversions
-
-- Widening (automatic): `int` to `double`
-- Narrowing (requires casting): `double` to `int`
-- Syntax: `(targetType) value`
-- Example:
-  ```java
-  double d = 4.5;
-  int i = (int)d; // i = 4
-  ```
-
----
+```java
+int x = 10;
+x += 5;  // Equivalent to x = x + 5
+x -= 3;  // Equivalent to x = x - 3
+x *= 2;  // Equivalent to x = x * 2
+x /= 4;  // Equivalent to x = x / 4
+x %= 3;  // Equivalent to x = x % 3
+```
 
 <div style="page-break-after: always;"></div>
 
-## 2.17 Software Development Process
+## 2.13 Increment and Decrement Operators
 
-1. Requirements Specification
-2. System Analysis (IPO: Input, Process, Output)
-3. System Design
-4. Implementation (Coding)
-5. Testing
-6. Deployment
-7. Maintenance
+```java
+int i = 5;
+int j = i++;  // Post-increment: j = 5, i = 6
+int k = ++i;  // Pre-increment: k = 7, i = 7
 
----
+int m = 5;
+int n = m--;  // Post-decrement: n = 5, m = 4
+int o = --m;  // Pre-decrement: o = 3, m = 3
+```
 
-## 2.18 Case Study: Counting Monetary Units
+## 2.14 Getting Current Time
 
-- Convert dollars to cents to avoid floating-point errors.
-- Use integer division and remainder to break into coins.
+```java
+long totalMilliseconds = System.currentTimeMillis();
+// Returns milliseconds since Unix epoch (Jan 1, 1970)
 
----
+// Convert to seconds, minutes, hours
+long totalSeconds = totalMilliseconds / 1000;
+long currentSecond = totalSeconds % 60;
+long totalMinutes = totalSeconds / 60;
+long currentMinute = totalMinutes % 60;
+long totalHours = totalMinutes / 60;
+long currentHour = totalHours % 24;
+```
 
-## 2.19 Common Errors and Pitfalls
+## 2.15 JShell (Java REPL)
 
-1. **Undeclared/uninitialized variables**
-2. **Integer overflow**:  
-   `int value = 2147483647 + 1; // becomes -2147483648`
-3. **Round-off errors**:  
-   `1.0 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1 != 0.5`
-4. **Unintended integer division**:  
-   `(1 + 2) / 2 = 1` but `(1 + 2) / 2.0 = 1.5`
-5. **Redundant input objects**: Use one `Scanner` object.
+- Interactive tool for testing Java code without full class structure
+- Launch with `jshell` command
+- Useful for quick experiments and learning
+- Supports expressions, statements, and variable declarations
 
----
+## 2.16 Software Development Life Cycle
 
-## Key Terms
-
-- Algorithm, Variable, Constant, Identifier
-- Primitive data types, Operator, Operand
-- Casting, Overflow, Round-off error
-- IPO, REPL, JShell
-
----
+1. **Requirements Specification**: Define what the program should do
+2. **System Analysis**: Determine input, processing, output (IPO)
+3. **System Design**: Create algorithm and plan structure
+4. **Implementation**: Write code following the design
+5. **Testing**: Verify program works correctly
+6. **Deployment**: Make program available to users
+7. **Maintenance**: Update and improve program over time
 
 <div style="page-break-after: always;"></div>
 
-## Example Programs to Remember:
+## 2.17 Common Errors and Pitfalls
 
-1. Compute area of circle
-2. Read input with `Scanner`
-3. Convert Fahrenheit to Celsius
-4. Display current time
-5. Compute loan payments
-6. Count monetary units
+1. **Undeclared or uninitialized variables**
+2. **Integer overflow** (values exceeding type limits)
+3. **Round-off errors** in floating-point calculations
+4. **Unintended integer division** (5/2 = 2 instead of 2.5)
+5. **Redundant Scanner objects** (create only one)
 
----
+## 2.18 Case Studies
 
-This summary covers all key concepts, syntax, and common pitfalls from Chapter 2. Review the code examples and practice writing programs to reinforce your understanding.
+- Computing loan payments with interest
+- Converting between measurement systems
+- Calculating geometric properties
+- Processing monetary amounts
+- Displaying and formatting current time
+
+## Important Notes :
+
+- Use appropriate data types for your values
+- Remember integer division behavior (5/2 = 2)
+- Always initialize variables before use
+- Use descriptive names following naming conventions
+- Test programs with various input values
+- Understand operator precedence in expressions
+- Use casting when converting between types
