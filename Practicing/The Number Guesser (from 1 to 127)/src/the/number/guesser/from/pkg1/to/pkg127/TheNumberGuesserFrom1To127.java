@@ -171,6 +171,6 @@ public class TheNumberGuesserFrom1To127 {
             num += 64;
         }
         System.out.println("your number is : " + num);
+        input.close();
     }
-
 }

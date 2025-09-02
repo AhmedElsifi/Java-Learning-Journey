@@ -46,6 +46,7 @@ public class SimpleMathAndStringUtilityTool {
         } else {
             System.out.println("the string you entered does not start with a letter");
         }
+        input.close();
     }
 
 }
