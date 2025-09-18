@@ -171,6 +171,8 @@
 
 👉 Use `StringBuilder` for speed unless you specifically need thread safety.
 
+👉 Thread-safe means the class or method ensures correct results when accessed by multiple threads at the same time.
+
 ---
 
 ## 🔐 Access Modifiers in Java
