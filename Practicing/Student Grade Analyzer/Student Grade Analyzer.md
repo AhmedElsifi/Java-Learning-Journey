@@ -1,7 +1,3 @@
-Based on the chapters you've shared (Chapters 1–10), here's a **focused and practical programming task** that revises key concepts like **String manipulation**, **arrays**, **methods**, **Scanner input**, **StringBuilder**, and **basic OOP**—without being too trivial or time-consuming.
-
----
-
 ### 🧠 **Task: Student Grade Analyzer**
 
 **Objective**:  
