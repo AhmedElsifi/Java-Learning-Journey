@@ -10,7 +10,7 @@ public class App {
 
         Scanner input = new Scanner(System.in);
         resetBoard(board);
-        System.out.println("Welcome to Connect Four!");
+        System.out.println("Welcome to Connect Four! ");
         System.out.println("To win, connect four of your pieces in a row — vertically, horizontally, or diagonally.");
         System.out.println("Players take turns dropping pieces into one of the columns.");
         while (true) {
